@@ -17,5 +17,3 @@ Run the SQL file in `/sql/create_school_db.sql` to set up the MySQL database and
   "latitude": 26.8467,
   "longitude": 80.9462
 }
-
-dummy data is added for testing of api
