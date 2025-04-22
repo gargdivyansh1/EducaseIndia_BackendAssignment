@@ -5,13 +5,15 @@ const connection = mysql.createConnection({
     password: process.env.MYSQLPASSWORD || process.env.DB_PASSWORD || '',
     database: process.env.MYSQLDATABASE || process.env.DB_NAME || 'test',
     port: process.env.MYSQLPORT || process.env.DB_PORT || 3306,
-    connectTimeout: 30000
-  });
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+});
 
 connection.connect(err => {
     if (err) {
         console.error('Database connection failed: ', err);
-        return ;
+        return;
     }
     console.log('Connected to MySQL database');
 });
